@@ -1,0 +1,134 @@
+.input-wrapper {
+  position: relative;
+  width: 120px;
+  height: 38px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+button {
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: #00ffc1;
+  color: #1d2040;
+  position: absolute;
+  bottom: 20px;
+}
+
+.amount-input {
+  border: 0;
+  width: 80px;
+  height: 38px;
+  background: none;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+  user-select: none;
+  outline: none;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 5px;
+}
+
+.amount-input::-webkit-inner-spin-button,
+.amount-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sol-label {
+  color: white;
+  font-size: 14px;
+  padding-right: 20px;
+}
+
+.input-label {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  transform: translateY(-30px);
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  position: static;
+  bottom: auto;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: #00ffc1;
+  color: #1d2040;
+}
+
+select {
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border: 1px solid #5e5e68;
+  border-radius: 5px;
+  padding: 6px 28px 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg fill="%23EEA7ED" height="14" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  max-width: 160px;
+}
+
+.region-wrapper {
+  position: relative;
+  width: 120px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.region-wrapper .input-label {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  transform: translateY(-30px);
+}
+
+.region-wrapper select {
+  border: 0;
+  height: 38px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+  user-select: none;
+  outline: none;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 5px;
+  appearance: none;
+}

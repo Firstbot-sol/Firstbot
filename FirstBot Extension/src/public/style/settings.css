@@ -1,0 +1,285 @@
+html,
+body {
+  max-width: none;
+  min-width: 0;
+  height: auto;
+}
+.tabNav {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 12px;
+}
+.tabButton {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #5e5e68;
+  color: #fff;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.tabButton:hover {
+  transform: translateY(-2px);
+  border-color: #eea7ed;
+}
+.tabButton.active {
+  background: #eea7ed;
+  border-color: #eea7ed;
+  color: #1d2040;
+}
+.settingsContainer {
+  max-width: 860px;
+  margin: 40px auto;
+  display: none;
+}
+.settingsSection {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid #5e5e68;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 24px;
+}
+.settingsSection:last-of-type {
+  margin-bottom: 16px;
+}
+.headerTitle {
+  font-family: "Suisse Intl Medium";
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #ffd9ff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.presetList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.noPresetsMsg {
+  color: #d4d4df;
+  font-style: italic;
+}
+.presetCard {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #5e5e68;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  width: 220px;
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+}
+.presetContent {
+  margin-bottom: 6px;
+}
+.presetCard:hover {
+  border-color: #eea7ed;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+.presetActions {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+.presetButton {
+  background: transparent;
+  border: 1px solid #eea7ed;
+  color: #eea7ed;
+  font-size: 13px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.presetButton:hover {
+  background: #eea7ed;
+  color: #1d2040;
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+.fieldsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.inputRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 250px;
+  margin-bottom: 0;
+}
+.twoItems {
+  flex: 1 1 300px;
+}
+.inputRow label {
+  font-family: "Suisse Intl Light";
+  font-size: 15px;
+  color: white;
+  padding-left: 2px;
+}
+.inputRow input {
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 14px;
+  transition: background 0.2s;
+  border: 1px solid #5e5e68;
+}
+.inputRow input:focus {
+  outline: none;
+  border-color: #eea7ed;
+  background: rgba(0, 0, 0, 0.4);
+}
+.inputRow input:disabled {
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.2);
+  border-color: #5e5e68;
+  cursor: not-allowed;
+}
+.inputRow input:disabled + label,
+.inputRow.disabled label {
+  opacity: 0.5;
+  color: #888;
+}
+#devSellSettingsInputs.disabled .inputRow label {
+  opacity: 0.5;
+  color: #888;
+}
+button.actionButton {
+  background: transparent;
+  border: 1px solid;
+  color: #00ffc1;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-right: 4px;
+}
+button.actionButton.saveBtn,
+button.actionButton.exportBtn {
+  border-color: #00ffc1;
+  color: #00ffc1;
+}
+button.actionButton.loadDefaults,
+button.actionButton.importBtn {
+  border-color: #eea7ed;
+  color: #eea7ed;
+}
+button.actionButton:hover {
+  color: #1d2040;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+button.actionButton.saveBtn:hover,
+button.actionButton.exportBtn:hover {
+  background: #00ffc1;
+}
+button.actionButton.loadDefaults:hover,
+button.actionButton.importBtn:hover {
+  background: #eea7ed;
+}
+button.actionButton:active {
+  transform: translateY(0);
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(6px);
+  color: #eea7ed;
+  padding: 12px 24px;
+  border-radius: 5px;
+  z-index: 10000;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #eea7ed;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fade-in 0.5s forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+.presetButton.deleteBtn {
+  border-color: #f93d3d;
+  color: #f93d3d;
+}
+.presetButton.deleteBtn:hover {
+  background: #f93d3d;
+  color: #1d2040;
+}
+.presetToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex: 1 1 250px;
+}
+.presetToggle label {
+  font-size: 15px;
+  color: white;
+  min-width: 150px;
+}
+.toggleButtons {
+  display: flex;
+  gap: 1px;
+}
+.toggleBtn {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #5e5e68;
+  color: #fff;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+.toggleBtn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.toggleBtn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.toggleBtn.active {
+  background: #eea7ed;
+  border-color: #eea7ed;
+  color: #1d2040;
+}
+.activeTab {
+  display: block !important;
+}
+.importExportContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 860px;
+  z-index: 9999;
+}
+
+/* NEW: a flex column for site preferences so they stack vertically */
+.sitePreferencesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

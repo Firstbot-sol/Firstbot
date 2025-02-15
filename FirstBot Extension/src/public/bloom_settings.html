@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>First Settings</title>
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/settings.css" />
+  </head>
+  <body>
+    <div class="tabNav">
+      <button class="tabButton active" data-tab="presetManagerTab">
+        Preset Manager
+      </button>
+      <button class="tabButton" data-tab="scraperSettingsTab">
+        Scraper Settings
+      </button>
+      <button class="tabButton" data-tab="limitSettingsTab">
+        Limit Settings
+      </button>
+      <button class="tabButton" data-tab="sitePreferencesTab">
+        Site Preferences
+      </button>
+    </div>
+
+    <div class="settingsContainer activeTab" id="presetManagerTab">
+      <div class="settingsSection">
+        <div class="headerTitle">First Preset Manager</div>
+
+        <div class="fieldsWrapper">
+          <div class="inputRow">
+            <label for="presetName">Preset Label</label>
+            <input
+              type="text"
+              id="presetName"
+              placeholder="e.g. My First Preset"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="buyAmounts">Buy Amounts (SOL)</label>
+            <input
+              type="text"
+              id="buyAmounts"
+              placeholder="e.g. 0.5, 1, 2, 5, 10"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="sellPercents">Sell Percentages (%)</label>
+            <input
+              type="text"
+              id="sellPercents"
+              placeholder="e.g. 10, 20, 50, 100"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="buyFee">Buy Fee (SOL)</label>
+            <input
+              type="number"
+              id="buyFee"
+              step="0.001"
+              placeholder="e.g. 0.005"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="buyTip">Buy Tip (SOL)</label>
+            <input
+              type="number"
+              id="buyTip"
+              step="0.001"
+              placeholder="e.g. 0.01"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="buySlippage">Buy Slippage (%)</label>
+            <input type="number" id="buySlippage" placeholder="e.g. 20" />
+          </div>
+          <div class="inputRow">
+            <label for="sellFee">Sell Fee (SOL)</label>
+            <input
+              type="number"
+              id="sellFee"
+              step="0.001"
+              placeholder="e.g. 0.005"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="sellTip">Sell Tip (SOL)</label>
+            <input
+              type="number"
+              id="sellTip"
+              step="0.001"
+              placeholder="e.g. 0.01"
+            />
+          </div>
+          <div class="inputRow">
+            <label for="sellSlippage">Sell Slippage (%)</label>
+            <input type="number" id="sellSlippage" placeholder="e.g. 20" />
+          </div>
+        </div>
+        <div class="fieldsWrapper" style="margin-bottom: 0">
+          <div class="presetToggle">
+            <label>Anti-MEV for Buys:</label>
+            <div class="toggleButtons">
+              <button
+                class="toggleBtn active"
+                data-value="on"
+                id="antiMevBuyOn"
+              >
+                On
+              </button>
+              <button class="toggleBtn" data-value="off" id="antiMevBuyOff">
+                Off
+              </button>
+            </div>
+          </div>
+          <div class="presetToggle">
+            <label>Anti-MEV for Sells:</label>
+            <div class="toggleButtons">
+              <button
+                class="toggleBtn active"
+                data-value="on"
+                id="antiMevSellOn"
+              >
+                On
+              </button>
+              <button class="toggleBtn" data-value="off" id="antiMevSellOff">
+                Off
+              </button>
+            </div>
+          </div>
+          <div class="presetToggle">
+            <label>Auto Tip:</label>
+            <div class="toggleButtons">
+              <button class="toggleBtn active" data-value="on" id="autoTipOn">
+                On
+              </button>
+              <button class="toggleBtn" data-value="off" id="autoTipOff">
+                Off
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="actionButton saveBtn" id="savePreset">
+          Save Preset
+        </button>
+        <button class="actionButton loadDefaults" id="loadDefaults">
+          Load Defaults
+        </button>
+      </div>
+
+      <div class="settingsSection">
+        <div class="presetList" id="presetList"></div>
+      </div>
+    </div>
+
+    <div class="settingsContainer" id="scraperSettingsTab">
+      <div class="settingsSection">
+        <div class="headerTitle">First Scraper Settings</div>
+        <div class="fieldsWrapper">
+          <div class="twoItems inputRow">
+            <label for="discordAutoBuyAmount"
+              >Discord Auto Buy Amount (SOL)</label
+            >
+            <input
+              type="number"
+              id="discordAutoBuyAmount"
+              step="0.001"
+              placeholder="e.g. 0.25"
+            />
+          </div>
+          <div class="twoItems inputRow">
+            <label for="telegramAutoBuyAmount"
+              >Telegram Auto Buy Amount (SOL)</label
+            >
+            <input
+              type="number"
+              id="telegramAutoBuyAmount"
+              step="0.001"
+              placeholder="e.g. 0.25"
+            />
+          </div>
+          <div class="inputRow"></div>
+        </div>
+        <div class="fieldsWrapper" style="margin-bottom: 0">
+          <div class="presetToggle">
+            <label>Skip contract if previously bought:</label>
+            <div class="toggleButtons">
+              <button
+                class="toggleBtn active"
+                data-value="on"
+                id="skipContractOn"
+              >
+                On
+              </button>
+              <button class="toggleBtn" data-value="off" id="skipContractOff">
+                Off
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="actionButton saveBtn" id="saveScraperSettings">
+          Save Settings
+        </button>
+      </div>
+    </div>
+
+    <div class="settingsContainer" id="limitSettingsTab">
+      <div class="settingsSection">
+        <div class="headerTitle">Limit Order Settings</div>
+        <div class="fieldsWrapper">
+          <div class="twoItems inputRow">
+            <label for="limitBuyTip">Limit Buy Tip (SOL)</label>
+            <input
+              type="number"
+              id="limitBuyTip"
+              step="0.001"
+              placeholder="e.g. 0.005"
+            />
+          </div>
+          <div class="twoItems inputRow">
+            <label for="limitSellTip">Limit Sell Tip (SOL)</label>
+            <input
+              type="number"
+              id="limitSellTip"
+              step="0.001"
+              placeholder="e.g. 0.01"
+            />
+          </div>
+          <div class="twoItems inputRow">
+            <label for="limitBuySlippage">Limit Buy Slippage (%)</label>
+            <input type="number" id="limitBuySlippage" placeholder="e.g. 15" />
+          </div>
+          <div class="twoItems inputRow">
+            <label for="limitSellSlippage">Limit Sell Slippage (%)</label>
+            <input type="number" id="limitSellSlippage" placeholder="e.g. 15" />
+          </div>
+        </div>
+        <button
+          class="actionButton saveBtn"
+          id="saveLimitSettings"
+          style="margin-bottom: 0"
+        >
+          Save Limit Settings
+        </button>
+      </div>
+
+      <div class="settingsSection">
+        <div class="headerTitle">Dev Sell Settings</div>
+        <div class="fieldsWrapper" style="margin-bottom: 0">
+          <div class="presetToggle">
+            <label style="margin-right: 61px;">Automatically sell when dev sells:</label>
+            <div class="toggleButtons">
+              <button class="toggleBtn" data-value="on" id="devSellOn">
+                On
+              </button>
+              <button class="toggleBtn active" data-value="off" id="devSellOff">
+                Off
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="fieldsWrapper" style="margin-bottom: 0">
+          <div class="presetToggle">
+            <label>Add "Dev Sell" quick order button to Panel:</label>
+            <div class="toggleButtons">
+              <button class="toggleBtn" data-value="on" id="devSellBtnOn">
+                On
+              </button>
+              <button class="toggleBtn active" data-value="off" id="devSellBtnOff">
+                Off
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="fieldsWrapper" id="devSellSettingsInputs">
+          <div class="inputRow">
+            <label for="devSellSlippage">Sell Slippage (%)</label>
+            <input
+              type="number"
+              id="devSellSlippage"
+              placeholder="e.g. 5"
+              disabled
+            />
+          </div>
+          <div class="inputRow">
+            <label for="devSellBundleTip">Sell Bundle Tip (SOL)</label>
+            <input
+              type="number"
+              id="devSellBundleTip"
+              step="0.001"
+              placeholder="e.g. 0.01"
+              disabled
+            />
+          </div>
+          <div class="inputRow">
+            <label for="devSellAmount">Sell Amount (%)</label>
+            <input
+              type="number"
+              id="devSellAmount"
+              placeholder="e.g. 20"
+              disabled
+            />
+          </div>
+        </div>
+        <button class="actionButton saveBtn" id="saveDevSellSettings">
+          Save Dev Sell Settings
+        </button>
+      </div>
+    </div>
+
+    <div class="settingsContainer" id="sitePreferencesTab">
+      <div class="settingsSection">
+        <div class="headerTitle">Site Preferences</div>
+        <div class="sitePreferencesList" id="sitePreferencesList">
+        </div>
+        <button
+          class="actionButton saveBtn"
+          id="saveSitePreferences"
+        >
+          Save Site Preferences
+        </button>
+      </div>
+    </div>
+
+    <div class="importExportContainer">
+      <button class="actionButton exportBtn" id="exportAllSettings">
+        Export All Settings
+      </button>
+      <button class="actionButton importBtn" id="importAllSettings">
+        Import All Settings
+      </button>
+      <input
+        type="file"
+        id="importFileInput"
+        accept=".json"
+        style="display: none"
+      />
+    </div>
+    <script src="scripts/settings.js"></script>
+  </body>
+</html>

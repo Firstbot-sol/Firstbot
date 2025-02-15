@@ -1,0 +1,107 @@
+{
+  "manifest_version": 3,
+  "name": "FirstBot",
+  "version": "1.0.1",
+  "description": "Trading bot built by traders for traders / 0.1% commission for NFT holders /0.5% commission for all other users",
+  "permissions": ["storage", "tabs", "webNavigation", "webRequest"],
+  "host_permissions": [
+    "https://extension.bloombot.app/*",
+    "https://photon-sol.tinyastro.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://photon-sol.tinyastro.io/*"],
+      "js": ["src/content_script/photon.js"]
+    },
+    {
+      "matches": ["https://neo.bullx.io/*", "https://neo-backup.bullx.io/*"],
+      "js": ["src/content_script/bullx-neo.js"]
+    },
+    {
+      "matches": ["https://neo.bullx.io/*", "https://neo-backup.bullx.io/*"],
+      "js": ["src/content_script/neo-blocker.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://gmgn.ai/*"],
+      "js": ["src/content_script/gmgn.js"]
+    },
+    {
+      "matches": ["https://dexscreener.com/*"],
+      "js": ["src/content_script/dexscreener.js"]
+    },
+    {
+      "matches": ["https://ape.pro/*"],
+      "js": ["src/content_script/ape.js"]
+    },
+    {
+      "matches": ["https://solscan.io/*"],
+      "js": ["src/content_script/solscan.js"]
+    },
+    {
+      "matches": [
+        "https://pump.fun/board",
+        "https://pump.fun/profile/*",
+        "https://pump.fun/advanced",
+        "https://pump.fun/coin/*"
+      ],
+      "js": ["src/content_script/pumpfun.js"]
+    },
+    {
+      "matches": ["https://x.com/*"],
+      "js": ["src/content_script/twitter.js"]
+    },
+    {
+      "matches": ["https://ave.ai/*"],
+      "js": ["src/content_script/ave.js"]
+    },
+    {
+      "matches": ["https://discord.com/*"],
+      "js": [
+        "src/content_script/discord.js",
+        "src/content_script/discord-fix.js"
+      ]
+    },
+    {
+      "matches": ["https://web.telegram.org/*"],
+      "js": ["src/content_script/telegram.js"]
+    },
+    {
+      "matches": ["https://axiom.trade/*"],
+      "js": ["src/content_script/axiom.js"]
+    },
+    {
+      "matches": ["https://axiom.trade/*"],
+      "js": ["src/content_script/axiom-blocker.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://debot.ai/*"],
+      "js": ["src/content_script/debot.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "icons": {
+    "48": "src/public/assets/images/bloom-48.png",
+    "128": "src/public/assets/images/bloom-128.png"
+  },
+  "action": {
+    "default_icon": "src/public/assets/images/bloom-48.png",
+    "default_title": "Bloom",
+    "default_popup": "src/public/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/overrides/neo.js",
+        "src/overrides/axiom.js",
+        "src/overrides/discord.js",
+        "src/public/assets/images/bg-dark.png",
+        "src/public/assets/images/resize.svg"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

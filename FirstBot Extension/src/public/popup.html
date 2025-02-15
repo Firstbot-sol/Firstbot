@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/popup.css" />
+    <link rel="preload" href="assets/images/bg-dark.png" as="image" />
+  </head>
+  <body>
+    <div class="main">
+      <div
+        class="logo"
+        style="
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 25px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #fff;
+          "
+        >
+          First Extension v1.0.1a
+        </div>
+
+          <path
+            d="M11.6158 12.2868C13.6109 12.3565 15.2818 11.5917 16.4435 10.3827C18.5888 8.15279 19.0029 4.41422 16.5326 1.62946L14.6886 2.72176C14.148 3.04231 13.4573 2.85155 13.145 2.29669C12.8386 1.75315 12.4008 1.29498 11.8653 0.990978C9.49341 -0.381804 6.69215 1.27668 5.75952 4.21562C7.68587 3.38551 8.81792 3.42296 9.51208 3.74003H9.51293C9.64022 3.79752 9.75224 3.86459 9.85237 3.93776C10.1654 4.16383 10.4379 4.52126 10.6973 4.86154C11.2114 5.53603 11.6742 6.14316 12.2998 5.52656C12.5679 5.21037 12.4839 4.70341 12.332 4.22782C12.2722 4.03956 12.2017 3.8561 12.1384 3.69099C12.0067 3.34805 11.9055 3.08432 11.9926 3.02141C12.1716 2.89162 13.4157 3.75832 14.0309 5.26524C14.0785 5.37935 14.1209 5.49694 14.1599 5.61889C15.0637 8.54912 13.0576 11.3635 11.6158 12.2868Z"
+            fill="white"
+          />
+          <path
+            d="M3.42924 12.0429C3.32486 12.5638 3.34947 12.9375 3.44451 12.9828C3.49713 13.008 3.57265 12.9532 3.666 12.8504C3.74471 12.7652 3.83638 12.6469 3.93875 12.5149C4.31868 12.0249 4.84594 11.3449 5.4048 11.4567C6.23708 11.705 5.95657 12.4194 5.64476 13.2136C5.4873 13.6146 5.32186 14.0359 5.2877 14.4279C5.25715 14.7554 5.30297 15.1404 5.49815 15.5838C5.78583 16.2344 6.39683 17.0132 7.56876 17.9269C4.62238 18.5671 1.82282 16.9069 1.79481 14.1117C1.79481 14.1021 1.7946 14.0923 1.79439 14.0825C1.79418 14.0727 1.79396 14.0629 1.79396 14.0533C1.79396 13.4453 1.96029 12.8486 2.25731 12.3208C2.56959 11.7659 2.38375 11.0569 1.84318 10.7363L0 9.64403C0.914803 6.69551 3.34777 5.15548 5.82487 5.13894C7.99646 5.125 10.2029 6.28176 11.4503 8.685C9.94996 7.86534 6.57249 7.48904 4.55195 9.75727C3.89597 10.509 3.56077 11.3905 3.42924 12.0429Z"
+            fill="white"
+          />
+          <path
+            d="M17.9006 16.5036C17.3753 16.8276 16.7702 16.987 16.1584 16.987C15.5466 16.987 15.028 17.507 15.028 18.1473V20.3327C11.9187 21.0305 9.28805 19.4382 8.11781 17.0314C7.20725 15.1604 7.17925 12.7964 8.49374 10.6336C8.5523 12.3765 9.92365 15.5672 12.848 16.2292C12.9854 16.2588 13.1212 16.2815 13.2562 16.2971C14.8159 16.4844 16.1423 15.8233 16.1236 15.6012C16.0975 15.4926 15.8157 15.4472 15.4575 15.3896C15.1865 15.3459 14.8718 15.2953 14.591 15.2048C14.0793 15.0402 13.6805 14.7441 13.8629 14.1186C14.1635 13.645 14.6632 13.5862 15.2239 13.5202C15.4088 13.4985 15.6003 13.4759 15.7935 13.4375C16.7932 13.2371 17.8361 12.6108 18.2324 9.46285C20.2462 11.7616 20.2445 15.0803 17.9006 16.5036Z"
+            fill="white"
+          />
+        </svg>
+        <div>
+          <span style="font-family: 'Suisse Intl Medium'">First</span
+          ><span style="font-family: 'Suisse Intl Light'">Bot</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; margin-top: 90px">
+        <div class="input-wrapper">
+          <div class="input-label">Quick Buy Amount</div>
+          <input
+            type="number"
+            class="amount-input"
+            id="quickBuyAmount"
+            placeholder="Quick Buy Amount"
+            value="0.5"
+            min="0"
+            step="0.001"
+          />
+          <span class="sol-label">SOL</span>
+        </div>
+        <div class="region-wrapper">
+          <div class="input-label">Region</div>
+          <select id="regionSelect">
+            <option value="EU1">EU1</option>
+            <option value="EU2">EU2</option>
+            <option value="US1">US1</option>
+            <option value="SG1">SG1</option>
+          </select>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button id="settingsBtn" type="button">Settings</button>
+        <button id="logoutBtn" type="button">Logout</button>
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+    </div>
+    <script src="scripts/popup.js"></script>
+  </body>
+</html>
